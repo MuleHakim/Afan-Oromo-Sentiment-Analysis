@@ -20,7 +20,6 @@ class SentimentRequest(BaseModel):
 @app.post("/predict")
 def predict_sentiment_api(request: SentimentRequest):
     text = request.text
-    prediction = "90889"
+    prediction = "negative"
     # prediction = predict_sentiment(text) 
-    return {"negative": prediction}
-
+    return prediction
