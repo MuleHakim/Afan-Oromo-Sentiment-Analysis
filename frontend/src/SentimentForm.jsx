@@ -74,7 +74,7 @@ const SentimentForm = () => {
 
         {prediction && (
           <Card className={`mt-3 text-center p-3 ${getPredictionColor()}`}>
-            <h3>Prediction:</h3>
+            <h3>Prediction</h3>
             <p>{prediction}</p>
           </Card>
         )}
