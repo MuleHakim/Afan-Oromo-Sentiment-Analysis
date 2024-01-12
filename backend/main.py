@@ -3,11 +3,11 @@ from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from keras.models import load_model
 from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
+from keras.utils import pad_sequences
 import numpy as np
 
 # Specify the path to your .h5 file
-file_path = r'C:\Users\Abraham\Afan-Oromo-Sentiment-Analysis\backend\model.h5'
+file_path = r'model.h5'
 
 # Load the model
 model = load_model(file_path)
