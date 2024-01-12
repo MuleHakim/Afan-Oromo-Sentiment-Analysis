@@ -14,7 +14,6 @@ model = load_model(file_path)
 
 # Tokenizer for text preprocessing
 tokenizer = Tokenizer()
-tokenizer.fit_on_texts([""])  # Provide an empty string to avoid errors during tokenization
 
 app = FastAPI()
 app.add_middleware(
@@ -31,11 +30,10 @@ class SentimentRequest(BaseModel):
 @app.post("/predict")
 def predict_sentiment_api(request: SentimentRequest):
     text = request.text
-
     # Tokenize and pad the input text
+    tokenizer.fit_on_texts([text])  # Provide an empty string to avoid errors during tokenization
     sequences = tokenizer.texts_to_sequences([text])
     padded_sequence = pad_sequences(sequences, maxlen=30)  # Adjust maxlen based on your model's input shape
-
     # Predict sentiment
     predicted = model.predict(padded_sequence)
     label = np.argmax(predicted, axis=1)
@@ -43,4 +41,4 @@ def predict_sentiment_api(request: SentimentRequest):
     sentiments = ["negative", "neutral", "positive"]
     ans = sentiments[label[0]]
 
-    return {"The sentiment predicted is": ans}
+    return ans
