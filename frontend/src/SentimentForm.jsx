@@ -6,6 +6,7 @@ import { Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 const FORM_ENDPOINT = "https://afan-oromo-sa-be.onrender.com/predict";
 
+
 const SentimentForm = () => {
   const [text, setText] = useState('');
   const [prediction, setPrediction] = useState('');
