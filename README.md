@@ -1,1 +1,1 @@
-# Afan-Oromo-Sentiment-Analysis
+# Afan-Oromo-Sentiment-Analysis Mono Repo
