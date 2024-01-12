@@ -4,7 +4,7 @@ import { Spinner, Form, Button } from 'react-bootstrap';
 import { BsFillCaretRightFill } from 'react-icons/bs';
 import { Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-const FORM_ENDPOINT = "http://127.0.0.1:8000/predict";
+const FORM_ENDPOINT = "https://afaanoromosentiment.onrender.com/predict";
 
 const SentimentForm = () => {
   const [text, setText] = useState('');
