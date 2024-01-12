@@ -18,7 +18,7 @@ const SentimentForm = () => {
     
     try {
       const response = await axios.post(`${FORM_ENDPOINT}`, { text });
-      setPrediction(response.data.prediction);
+      setPrediction(response.data);
     } catch (error) {
       console.error('Error predicting sentiment:', error);
     } finally {
