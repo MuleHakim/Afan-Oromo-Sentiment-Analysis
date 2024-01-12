@@ -4,7 +4,8 @@ import { Spinner, Form, Button } from 'react-bootstrap';
 import { BsFillCaretRightFill } from 'react-icons/bs';
 import { Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-const FORM_ENDPOINT = "https://afaanoromosentiment.onrender.com/predict";
+const FORM_ENDPOINT = "https://afan-oromo-sa-be.onrender.com/predict";
+
 
 const SentimentForm = () => {
   const [text, setText] = useState('');
@@ -18,7 +19,7 @@ const SentimentForm = () => {
     
     try {
       const response = await axios.post(`${FORM_ENDPOINT}`, { text });
-      setPrediction(response.data.prediction);
+      setPrediction(response.data);
     } catch (error) {
       console.error('Error predicting sentiment:', error);
     } finally {
